@@ -16,6 +16,11 @@
 
 Esta guía te proporcionará instrucciones detalladas para integrar, personalizar y modificar la herramienta de selección de modo de speaker en un proyecto de Unity. Este package fue desarrollado en Unity **2021.3.15f1** y contiene varias escenas preconfiguradas, scripts y assets necesarios para su funcionamiento.
 
+GUÍA DE USO / DOCS:
+
+[![GoogleDocs](https://img.shields.io/badge/Guide-GoogleDocs-blue?style=for-the-badge)](https://docs.google.com/document/d/1fNBMMr-iCRFTAYUThmCsrDRbVIwLbtT8DEUj7X-9amA/edit?usp=sharing)
+
+
 
 ![Speaker Mode Selector Demo](.image/speakerdemo.gif)
 
