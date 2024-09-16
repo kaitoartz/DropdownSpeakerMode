@@ -61,6 +61,8 @@ Esta guía te proporcionará instrucciones detalladas para integrar, personaliza
 
 - **Unity** versión **2021.3.15f1** o superior.
 - Conocimiento básico de la interfaz de Unity y manejo de scripts.
+- Package: [![UnityPackage](https://img.shields.io/badge/SpeakerModeTool%2B-blue.svg)](https://github.com/KaitoOwO/DropdownSpeakerMode/blob/main/SpeakerModeTool.unitypackage
+)
 
 ### Pasos de Instalación
 
