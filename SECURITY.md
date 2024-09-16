@@ -1,6 +1,6 @@
 # Políticas de Privacidad
 
-Última actualización: 03 de Septiembre de 2024
+Última actualización: 16 de Septiembre de 2024
 
 ## 1. Introducción
 
