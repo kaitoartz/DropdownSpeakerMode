@@ -5,7 +5,7 @@
 [![UnityPackage](https://img.shields.io/badge/Package-SpeakerModeTool%2B-blue.svg)](https://github.com/KaitoOwO/DropdownSpeakerMode/blob/main/SpeakerModeTool.unitypackage
 )
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20SteamDeck-lightgrey)](#)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Xbox%20%7C%20PlayStation-lightgrey)](#)
 [![Contributions](https://img.shields.io/badge/Contributions-Welcome-orange.svg)](CONTRIBUTING.md)
 [![Twitter Follow](https://img.shields.io/twitter/follow/kaitoartzz?style=social)](https://x.com/kaitoartzz)
 
@@ -38,7 +38,7 @@ Esta guía te proporcionará instrucciones detalladas para integrar, personaliza
 
 ## ✨ Características
 
-- **Compatibilidad Multiplataforma**: Funciona en Windows, macOS y Linux.
+- **Compatibilidad Multiplataforma**: Funciona en Windows, macOS, Linux, Xbox y Playstation.
 - **Selección Dinámica**: Permite cambiar entre diferentes modos de altavoz en tiempo real.
 - **Interfaz de Usuario Intuitiva**: Utiliza un dropdown para una selección fácil y rápida.
 - **Persistencia de Configuración**: Guarda y carga automáticamente la última configuración de audio seleccionada.
@@ -170,7 +170,7 @@ public class AudioSettingsDropdown : MonoBehaviour
    - Utiliza el `SceneManager` para moverte entre diferentes escenas manteniendo la configuración de audio.
 
 > [!TIP]
-> Para manejar el buffer de audio de manera óptima cuando se cambian modos de speaker, puedes modificar el `AudioManager` para pausar y reanudar el audio de forma más controlada, evitando problemas de corte abrupto.
+> Para manejar el buffer de audio de manera óptima cuando se cambian modos de speaker, puedes modificar el `AudioSettingsManager` para pausar y reanudar el audio de forma más controlada, evitando problemas de corte abrupto.
 
 ---
 
@@ -178,7 +178,7 @@ public class AudioSettingsDropdown : MonoBehaviour
 
 ### **Cambio de speaker en tiempo real**
 
-#### **MainScene:**
+### **MainScene:**
 
 Una vez que estemos en game. Cargará la escena **LoadInitialization** y pasará a **MainScene**. 
 
@@ -186,34 +186,34 @@ Una vez que estemos en game. Cargará la escena **LoadInitialization** y pasará
 
 Si cambiamos el tipo de speaker, aparecerá el panel de advertencia.
 
-##### **Panel de Advertencia:**
+#### **Panel de Advertencia:**
 
 ![image](https://github.com/user-attachments/assets/666c83fe-784c-4050-ad71-c6844445b3ce)
 
 Si le damos a **Aplicar**, se pausara el audio, pero luego volverá a reanudar normalmente (Esto es como feedback de que el cambio se realizó correctamente) y se vera asi el **AudioMixer**:
 
-##### **Cambios en AudioMixer:**
+#### **Cambios en AudioMixer:**
 
 ![image](https://github.com/user-attachments/assets/0b778078-887c-4c2a-aef0-d5116761c3e6)
 ![image](https://github.com/user-attachments/assets/c203bc46-dbb4-4a14-8388-0c610536a1a7)
 
-#### **Comprobar cambios:**
+### **Comprobar cambios:**
 
 Una vez que queramos cambiar de escena, nos fijamos que el **AudioMixer** sigue con el mismo valor aplicado.
 
-##### **Escena de nivel:**
+### **Escena de nivel:**
 
 ![image](https://github.com/user-attachments/assets/f503095c-22cb-48fa-ac66-960fc29a8df8)
 
 Vemos que la escena de Nivel, es como cuando le damos Jugar a nuestro videojuego. Como ven, el audiomixer sigue con el mismo tipo de parlante.
 
-##### **Escena de pausa:**
+### **Escena de pausa:**
 
 Ahora como también estuvieramos testeando nuestro videojuego. Si vamos a la escena de pausa o vamos a una escena que también contenga un panel de opciones con el **Dropdown** de cambiar el parlante (**Speaker**), también guardará los valores que teníamos en la escena principal.
 
 ![image](https://github.com/user-attachments/assets/069aa923-547c-4ca4-b426-11779f9f767c)
 
-##### **Cerrar y volver a abrir el juego:**
+### **Cerrar y volver a abrir el juego:**
 
 Si cerramos nuestro videojuego, y luego lo volviéramos a abrir, nuestra escena de **LoadInitialization**, hará todo el trabajo para cargar los datos del playerprefb que guardamos con el valor del tipo de parlante.
 
