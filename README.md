@@ -17,7 +17,7 @@
 Esta guía te proporcionará instrucciones detalladas para integrar, personalizar y modificar la herramienta de selección de modo de speaker en un proyecto de Unity. Este package fue desarrollado en Unity **2021.3.15f1** y contiene varias escenas preconfiguradas, scripts y assets necesarios para su funcionamiento.
 
 
-![Speaker Mode Selector Demo](imagen_placeholder_demo.png)
+![Speaker Mode Selector Demo](.image/speakerdemo.gif)
 
 ---
 
@@ -28,7 +28,7 @@ Esta guía te proporcionará instrucciones detalladas para integrar, personaliza
 - [📦 Instalación](#-instalación)
 - [⚙️ Configuración](#️-configuración)
 - [🚀 Uso](#-uso)
-- [🖼️ Ejemplos Visuales](#️-ejemplos-visuales)
+- [🎮 Pruebas](#-pruebas)
 - [📚 Documentación Detallada](#-documentación-detallada)
 - [🤝 Contribuciones](#-contribuciones)
 - [📄 Licencia](#-licencia)
@@ -72,14 +72,16 @@ Esta guía te proporcionará instrucciones detalladas para integrar, personaliza
    - Abre tu proyecto Unity (2021.3.15f1 o superior).
    - Ve a `Assets > Import Package > Custom Package`.
    - Selecciona el package de la herramienta de selección de speaker descargado.
-   - Contenido: 
-   ![Contenido de Package](Contenido1.png)
+   - Contenido:
+
+     ![image](https://github.com/user-attachments/assets/aaeb0bef-5f65-4500-a1ec-c7123c8e53e1)
 
 2. **Configuración de Escenas**
    - Abre `File > Build Settings`.
    - Asegúrate de que la escena "LoadInitialization" sea la primera en la lista.
    - Ordena las demás escenas según las necesidades de tu proyecto.
-   ![Lista de Build](Buildsetting.png)
+     
+     ![image](https://github.com/user-attachments/assets/413fd8c2-6918-469c-9115-5365267538b8)
 
 3. **Verificación de Componentes**
    - Revisa que los siguientes scripts estén presentes en tu proyecto:
@@ -88,7 +90,9 @@ Esta guía te proporcionará instrucciones detalladas para integrar, personaliza
      - `AudioSettingsDropdown`
      - `SceneManager`
      - `ChangeSceneTimer`
-    ![Contenido de scripts](scripts.png)
+       
+    ![image](https://github.com/user-attachments/assets/51471009-4ca3-42bd-acbb-e73dc2ac5e19)
+
 
 
 > [!NOTE]
@@ -170,18 +174,54 @@ public class AudioSettingsDropdown : MonoBehaviour
 
 ---
 
-## 🖼️ Ejemplos Visuales
+## 🎮 Pruebas
 
-### Demo en Acción
+### **Cambio de speaker en tiempo real**
 
-![CAMBIAR A NIVEL 1](imagen_cambiar_a_nivel_1.png)
-*Configuración inicial en Build Settings*
+#### **MainScene:**
 
-![LOAD INITIALIZATION FUNDAMENTAL](imagen_load_initialization_fundamental.png)
-*Escena de inicialización de carga*
+Una vez que estemos en game. Cargará la escena **LoadInitialization** y pasará a **MainScene**. 
 
-![CONTENIDO LEVEL SCENE](imagen_contenido_level_scene.png)
-*Contenido de la escena de nivel*
+![image](https://github.com/user-attachments/assets/352a190b-5cb0-45fa-b401-8826eb4dc243)
+
+Si cambiamos el tipo de speaker, aparecerá el panel de advertencia.
+
+##### **Panel de Advertencia:**
+
+![image](https://github.com/user-attachments/assets/666c83fe-784c-4050-ad71-c6844445b3ce)
+
+Si le damos a **Aplicar**, se pausara el audio, pero luego volverá a reanudar normalmente (Esto es como feedback de que el cambio se realizó correctamente) y se vera asi el **AudioMixer**:
+
+##### **Cambios en AudioMixer:**
+
+![image](https://github.com/user-attachments/assets/0b778078-887c-4c2a-aef0-d5116761c3e6)
+![image](https://github.com/user-attachments/assets/c203bc46-dbb4-4a14-8388-0c610536a1a7)
+
+#### **Comprobar cambios:**
+
+Una vez que queramos cambiar de escena, nos fijamos que el **AudioMixer** sigue con el mismo valor aplicado.
+
+##### **Escena de nivel:**
+
+![image](https://github.com/user-attachments/assets/f503095c-22cb-48fa-ac66-960fc29a8df8)
+
+Vemos que la escena de Nivel, es como cuando le damos Jugar a nuestro videojuego. Como ven, el audiomixer sigue con el mismo tipo de parlante.
+
+##### **Escena de pausa:**
+
+Ahora como también estuvieramos testeando nuestro videojuego. Si vamos a la escena de pausa o vamos a una escena que también contenga un panel de opciones con el **Dropdown** de cambiar el parlante (**Speaker**), también guardará los valores que teníamos en la escena principal.
+
+![image](https://github.com/user-attachments/assets/069aa923-547c-4ca4-b426-11779f9f767c)
+
+##### **Cerrar y volver a abrir el juego:**
+
+Si cerramos nuestro videojuego, y luego lo volviéramos a abrir, nuestra escena de **LoadInitialization**, hará todo el trabajo para cargar los datos del playerprefb que guardamos con el valor del tipo de parlante.
+
+![image](https://github.com/user-attachments/assets/d17d5ad6-e2e2-444d-aeb7-f2a77001764f)
+
+Esperamos un momento y…
+
+![image](https://github.com/user-attachments/assets/1f625439-d55b-4a59-9222-6ee405cbb607)
 
 ---
 
@@ -249,8 +289,6 @@ public class SceneManager : MonoBehaviour
 
 > [!NOTE]
 > Consulta el código fuente completo para más detalles y comentarios que te ayudarán a entender y modificar el comportamiento según tus necesidades.
-
----
 
 ## 🤝 Contribuciones
 
