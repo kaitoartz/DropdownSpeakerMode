@@ -2,6 +2,8 @@
 # 🔊 Unity Speaker Mode Selector
 
 [![Unity Version](https://img.shields.io/badge/Unity-2021.3.15f1%2B-blue.svg)](https://unity3d.com/get-unity/download)
+[![UnityPackage](https://img.shields.io/badge/Package-SpeakerModeTool%2B-blue.svg)](https://github.com/KaitoOwO/DropdownSpeakerMode/blob/main/SpeakerModeTool.unitypackage
+)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20SteamDeck-lightgrey)](#)
 [![Contributions](https://img.shields.io/badge/Contributions-Welcome-orange.svg)](CONTRIBUTING.md)
